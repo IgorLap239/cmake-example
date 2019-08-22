@@ -18,17 +18,15 @@ file (GLOB
 
 
 configure_file(
-        "${CMAKE_SOURCE_DIR}/include/ver.h.in"
-        "${CMAKE_SOURCE_DIR}/include/version.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ver.h.in"
+        "${CMAKE_CURRENT_SOURCE_DIR}/version.h"
 )
 
 configure_file(
-        "${CMAKE_SOURCE_DIR}/include/path.h.in"
-        "${CMAKE_SOURCE_DIR}/include/path.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/path.h.in"
+        "${CMAKE_CURRENT_SOURCE_DIR}/path.h"
 )
 
 add_executable (${PROJECT_NAME} ${CPP_SOURCES})
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_BINARY_DIR}/lib)
 target_link_libraries(${PROJECT_NAME} PRIVATE lib_stat lib_shar)
